@@ -2,16 +2,13 @@
 
 Wystawione są dwie usługi:
 
-
-applyForLoan (term, amount) - POST
-```js
-{
+1.  applyForLoan
+```
   localhost:8080/loan/apply
-}
 ```
 
-Request:
-```js
+Request POST:
+```
 {
 	"amount" : 7000,
 	"term" : "2018-12-22T10:24"
@@ -19,10 +16,8 @@ Request:
 ```
 
 ExtendLoan - POST
-```js
-{
+```
 localhost:8080/loan/{applicationLoanId}/extend
-}
 ```
 
 ## Informację dodatkowe:
