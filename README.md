@@ -2,7 +2,7 @@
 
 ### Wystawione usługi:
 
-1.  applyForLoan: localhost:8080/loan/apply
+1.  applyForLoan: `localhost:8080/loan/apply`
 
 Request POST:
 ```js
@@ -12,7 +12,7 @@ Request POST:
 }
 ```
 
-2. ExtendLoan -localhost:8080/loan/{applicationLoanId}/extend
+2. ExtendLoan -`localhost:8080/loan/{applicationLoanId}/extend`
 Request POST
 body - empty
 
