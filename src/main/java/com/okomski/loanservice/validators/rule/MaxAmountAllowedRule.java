@@ -15,7 +15,7 @@ public class MaxAmountAllowedRule implements ValidatableAndMessagable<LoanApplic
     @Autowired
     CommonBusinessRuleProperties commonBusinessRuleProperties;
 
-    private static LocalTime MIN_ASKED_HOUR = LocalTime.MIDNIGHT;
+    private static LocalTime MIN_ASKED_TIME = LocalTime.MIDNIGHT;
     private static LocalTime MAX_ASKED_TIME = LocalTime.of(6,0);
 
     @Override
@@ -24,7 +24,7 @@ public class MaxAmountAllowedRule implements ValidatableAndMessagable<LoanApplic
         BigDecimal amount = loanApplicationRequest.getAmount();
 
         return !(BigDecimalUtils.equals(amount, commonBusinessRuleProperties.getMaxAmount()) &&
-                currentTime.isAfter(MIN_ASKED_HOUR) && currentTime.isBefore(MAX_ASKED_TIME));
+                currentTime.isAfter(MIN_ASKED_TIME) && currentTime.isBefore(MAX_ASKED_TIME));
     }
 
     @Override
