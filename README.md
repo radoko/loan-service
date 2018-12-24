@@ -26,7 +26,7 @@ url:  jdbc:h2:mem:testdb
 ### Mechanizm reguł biznesowych
 
 Mechanizm został stworzony zgodnie z zasadą -  otwarte na rozszerzenie, ale zamknięte na modyfikacje.
-Dodałem hardcore, który można łatwo podmienić przez parametry np. z bazy, pliku.
+Dodałem hardcode, który można łatwo podmienić przez parametry np. z bazy, pliku.
 ```java
 {
 com.okomski.loanservice.validators.LoanApplicationValidationContext#VALIDATION_RULE_NAME
