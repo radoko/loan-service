@@ -11,7 +11,8 @@ public class TermMinMaxRule implements ValidatableAndMessagable<LoanApplicationR
     public static final String BEAN_NAME = "termMinMaxRule";
 
 
-    public static LocalDateTime MIN_TERM = LocalDateTime.now().minusDays(3);
+    public static LocalDateTime MIN_TERM = LocalDateTime.now()
+            .withHour(0).withMinute(0).withSecond(0).withNano(0);
     public static LocalDateTime MAX_TERM = LocalDateTime.now().plusDays(3);
 
     @Autowired

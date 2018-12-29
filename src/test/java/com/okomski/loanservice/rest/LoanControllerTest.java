@@ -1,7 +1,5 @@
 package com.okomski.loanservice.rest;
 
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
@@ -16,17 +14,14 @@ import com.okomski.loanservice.rest.dto.LoanApplicationResponse;
 import com.okomski.loanservice.service.LoanService;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(LoanController.class)
