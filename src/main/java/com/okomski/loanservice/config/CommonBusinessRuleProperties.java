@@ -19,4 +19,7 @@ public class CommonBusinessRuleProperties {
 
     @NotNull
     private BigDecimal maxAmount;
+
+    @NotNull
+    private Integer maxValidTermInDays;
 }

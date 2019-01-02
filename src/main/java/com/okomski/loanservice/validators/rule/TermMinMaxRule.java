@@ -2,6 +2,7 @@ package com.okomski.loanservice.validators.rule;
 
 import com.okomski.loanservice.config.CommonBusinessRuleProperties;
 import com.okomski.loanservice.rest.dto.LoanApplicationRequest;
+import com.okomski.loanservice.utils.SystemClock;
 import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,16 +11,19 @@ import org.springframework.stereotype.Component;
 public class TermMinMaxRule implements ValidatableAndMessagable<LoanApplicationRequest> {
     public static final String BEAN_NAME = "termMinMaxRule";
 
-
-    public static LocalDateTime MIN_TERM = LocalDateTime.now()
-            .withHour(0).withMinute(0).withSecond(0).withNano(0);
-    public static LocalDateTime MAX_TERM = LocalDateTime.now().plusDays(3);
+    @Autowired
+    SystemClock systemClock;
 
     @Autowired
     CommonBusinessRuleProperties commonBusinessRuleProperties;
 
     @Override
     public boolean isValid(LoanApplicationRequest loanApplicationRequest) {
+        Integer days = commonBusinessRuleProperties.getMaxValidTermInDays();
+
+        LocalDateTime MIN_TERM = systemClock.localDateNow().atStartOfDay();
+        LocalDateTime MAX_TERM = systemClock.localDateTimeNow().plusDays(days);
+
         LocalDateTime term = loanApplicationRequest.getTerm();
         return term.isAfter(MIN_TERM) &&
                 term.isBefore(MAX_TERM);

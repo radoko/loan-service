@@ -10,6 +10,10 @@ public class BigDecimalUtils {
         return a.compareTo(b) <= 0;
     }
 
+    public static boolean lessThan(BigDecimal a, BigDecimal b) {
+        return a.compareTo(b) < 0;
+    }
+
     public static boolean greaterThanOrEqual(BigDecimal a, BigDecimal b) {
         return a.compareTo(b) >= 0;
     }
